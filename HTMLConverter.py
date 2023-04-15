@@ -1,40 +1,40 @@
-# from pymongo import MongoClient
+from pymongo import MongoClient
+from numpy import np
 import matplotlib.pyplot as plt
 
 
 def ConvertToHTML() :
-    # # Connect To DB
-    # mongodb_URI = "mongodb://admin:1229@svc.sel3.cloudtype.app:30778/?authMechanism=DEFAULT"
-    # client = MongoClient(mongodb_URI)
-    # db = client['Hynpytol']
-    # type_documents = db['UserDatas'].find({})
-    # type_documents_count = db['UserDatas'].count_documents({})
+    # Connect To DB
+    mongodb_URI = "mongodb://admin:1229@svc.sel3.cloudtype.app:30778/?authMechanism=DEFAULT"
+    client = MongoClient(mongodb_URI)
+    db = client['Hynpytol']
+    type_documents = db['UserDatas'].find({})
+    type_documents_count = db['UserDatas'].count_documents({})
 
-    # # Make PlayTimeDictionary
-    # playTimeDic = {}
-    # playCount = {}
+    # Make PlayTimeDictionary
+    playTimeDic = {}
+    playCount = {}
 
-    # for i, document in enumerate(type_documents, 1):
-    #         camPos = document['CamPosName']
-    #         playTime = document['PlayTime']
-    #         if camPos in playTimeDic :
-    #             playTimeDic[camPos] = playTimeDic[camPos] + playTime
-    #             playCount[camPos] = playCount[camPos] + 1     
-    #         else :
-    #             playTimeDic[camPos] = playTime       
-    #             playCount[camPos] = 1     
+    for i, document in enumerate(type_documents, 1):
+            camPos = document['CamPosName']
+            playTime = document['PlayTime']
+            if camPos in playTimeDic :
+                playTimeDic[camPos] = playTimeDic[camPos] + playTime
+                playCount[camPos] = playCount[camPos] + 1     
+            else :
+                playTimeDic[camPos] = playTime       
+                playCount[camPos] = 1     
 
-    # for key in playTimeDic:
-    #     playTimeDic[key] = playTimeDic[key] / playCount[key]
+    for key in playTimeDic:
+        playTimeDic[key] = playTimeDic[key] / playCount[key]
 
-    # # Plot 생성
-    # x = np.arange(len(playTimeDic))
-    # y = playTimeDic.values()
+    # Plot 생성
+    x = np.arange(len(playTimeDic))
+    y = playTimeDic.values()
 
     plt.xlabel('Cam Pos Name')
     plt.ylabel('Average Play Time')
-    # plt.plot(x,y)
-    plt.plot([1,2,3,4])
+    plt.plot(x,y)
 
     plt.savefig('static/img/output.jpg')
 
