@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-from numpy import np
 import matplotlib.pyplot as plt
 
 
@@ -29,7 +28,9 @@ def ConvertToHTML() :
         playTimeDic[key] = playTimeDic[key] / playCount[key]
 
     # Plot 생성
-    x = np.arange(len(playTimeDic))
+    x = []
+    for i in range(0,50):
+        x.append(i)
     y = playTimeDic.values()
 
     plt.xlabel('Cam Pos Name')
