@@ -1,12 +1,12 @@
 from flask import Flask, render_template
-import HTMLConverter as converter
+import JPGConverter as converter
 
 
 app = Flask(__name__)
  
 @app.route("/")
 def main():
-    converter.ConvertToHTML()
+    converter.ConvertToJPG()
     return render_template('VisualHTML.html')
  
 if __name__ == '__main__':
