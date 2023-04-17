@@ -3,7 +3,33 @@
   <head>
   </head>
   <body>
-    <img src="/static/img/output.jpg" alt="이미지가 없나봐요..">
+    <form method="post" action="/">
+      <div>
+        <input type="checkbox" name="PlayTime" autocomplete="off"/>
+        <label for="PlayTime">PlayTime(Avg)</label>
+      </div>
+      <div>
+        <input type="checkbox" name="HookCount" autocomplete="off"/>
+        <label for="HookCount">HookCount(Avg)</label>
+      </div>
+      <div>
+        <input type="checkbox" name="UndoCount" autocomplete="off"/>
+        <label for="UndoCount">UndoCount(Avg)</label>
+      </div>
+      <div>
+        <input type="checkbox" name="RetryCount" autocomplete="off"/>
+        <label for="RetryCount">RetryCount(Avg)</label>
+      </div>
+      <div>
+        <input type="checkbox" name="PlayerCount" autocomplete="off"/>
+        <label for="PlayerCount">PlayerCount</label>
+      </div>
+      <div>
+        <input type="submit" name="Refresh" value="Refresh">
+      </div>
+
+    </form>
+    <img src="{{image}}">
   </div>
   </body>
 </html
