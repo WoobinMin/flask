@@ -52,8 +52,7 @@ def ExcuteCrawler():
     cralwer.CrawlingAndSaveTumblbug()
 
 scheduler = BackgroundScheduler()
-#scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
-scheduler.add_job(func=ExcuteCrawler, trigger="interval", seconds=30)
+scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
 scheduler.start()
  
 atexit.register(lambda:scheduler.shutdown())
