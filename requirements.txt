@@ -12,6 +12,6 @@ zipp==3.11.0 ; python_version >= '3.7'
 pymongo
 matplotlib
 requests
-BeautifulSoup
+BeautifulSoup4
 APScheduler
 atexit
