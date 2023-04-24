@@ -14,5 +14,3 @@ matplotlib
 requests
 time
 BeautifulSoup
-APScheduler
-atexit
