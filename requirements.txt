@@ -14,4 +14,3 @@ matplotlib
 requests
 BeautifulSoup4
 APScheduler
-atexit
