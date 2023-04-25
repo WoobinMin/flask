@@ -33,8 +33,34 @@ class Crawler:
             print(response.status_code)
             print("Crawling Failed!")
 
+    def GetPriceNMemeberCount(self):
+        print("Crawling...")
+        response = requests.get(self.url)
+        if response.status_code == 200:
+            html = response.text
+            soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
+            price = soup.select_one('#react-view > div.ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0.hklIjO > div > div > aside > div.ProjectIntroduction__FundingStatus-sc-1o2ojgb-11.ksxAKQ > div:nth-child(1) > div.ProjectIntroduction__StatusValue-sc-1o2ojgb-14.gMNqnP > span.ProjectIntroduction__Price-sc-1o2ojgb-15.jSZJkM')
+            memberCount = soup.select_one('#react-view > div.ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0.hklIjO > div > div > aside > div.ProjectIntroduction__FundingStatus-sc-1o2ojgb-11.ksxAKQ > div:nth-child(3)')
 
+            print("Crawling Success!")
+            return price.getText() + '/' + memberCount.getText().split("후원자")[1]
+        else : 
+            print(response.status_code)
+            print("Crawling Failed!")
+            return -1    
+        
+    def GetData(self, selector):
+        print("Crawling...")
+        response = requests.get(self.url)
+        if response.status_code == 200:
+            html = response.text
+            soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
+            data = soup.select_one(selector)
 
-
-
+            print(data.getText())
+            print("Crawling Success!")
+        else : 
+            print(response.status_code)
+            print("Crawling Failed!")
+        
 

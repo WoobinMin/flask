@@ -156,8 +156,3 @@ class Converter:
         plt.xlabel('Cam Pos Name')
         plt.legend()
         plt.savefig('static/img/output.jpg')
-
-
-
-
-#ConvertToJPG()
