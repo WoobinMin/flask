@@ -25,10 +25,6 @@ def main():
     dataCount=mongoDBManager.GetUserDatasCount()
     userCount=mongoDBManager.GetUserListCount()
 
-    cralwer = CrawlingTumblbug.Crawler()
-    cralwer.ConnectToDB()
-    cralwer.CrawlingAndSaveTumblbug()
-
     return render_template('index.html', price=price, memberCount=memeberCount,dataCount=dataCount, userCount=userCount)
 
 def ExcuteCrawler():
