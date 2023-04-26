@@ -28,7 +28,7 @@ def ExcuteCrawler():
     cralwer.ConnectToDB()
     cralwer.CrawlingAndSaveTumblbug()
 
-scheduler = BackgroundScheduler(timezone='Asia/Seoul')
+scheduler = BackgroundScheduler()
 scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
 scheduler.start()
  

@@ -3,6 +3,10 @@ import time
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import keys
+
 class Crawler:
     def __init__(self) -> None:
         self.url = 'https://www.tumblbug.com/base0'
@@ -25,7 +29,7 @@ class Crawler:
             memberCount = soup.select_one('#react-view > div.ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0.hklIjO > div > div > aside > div.ProjectIntroduction__FundingStatus-sc-1o2ojgb-11.ksxAKQ > div:nth-child(3)')
             now = time
             
-            doc = {'DateTime': now.strftime('%Y-%m-%d %H:%M:%S') ,'price':price.getText(),'MemberCount':memberCount.getText()}
+            doc = {'DateTime': now.strftime('%Y-%m-%d %H:%M:%S' , time.localtime(time.time())) ,'price':price.getText(),'MemberCount':memberCount.getText()}
             self.document.insert_one(doc)
 
             print("Crawling Success!")
@@ -63,4 +67,11 @@ class Crawler:
             print(response.status_code)
             print("Crawling Failed!")
         
+    def GetDynamicData(self):
+        driver = webdriver.Chrome('')
+
+
+crawler = Crawler()
+crawler.ConnectToDB()
+crawler.CrawlingAndSaveTumblbug()
 
