@@ -3,14 +3,11 @@ import time
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
-
-from selenium import webdriver
-from selenium.webdriver.common.keys import keys
-
 class Crawler:
     def __init__(self) -> None:
         self.url = 'https://www.tumblbug.com/base0'
         self.mongodb_URI = "mongodb://admin:1229@svc.sel3.cloudtype.app:30778/?authMechanism=DEFAULT"
+        self.ConnectToDB()
         
     def ConnectToDB(self) :
         # Connect To DB
@@ -46,12 +43,14 @@ class Crawler:
             price = soup.select_one('#react-view > div.ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0.hklIjO > div > div > aside > div.ProjectIntroduction__FundingStatus-sc-1o2ojgb-11.ksxAKQ > div:nth-child(1) > div.ProjectIntroduction__StatusValue-sc-1o2ojgb-14.gMNqnP > span.ProjectIntroduction__Price-sc-1o2ojgb-15.jSZJkM')
             memberCount = soup.select_one('#react-view > div.ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0.hklIjO > div > div > aside > div.ProjectIntroduction__FundingStatus-sc-1o2ojgb-11.ksxAKQ > div:nth-child(3)')
 
+            res = [price.getText(), memberCount.getText().split("후원자")[1]]
+
             print("Crawling Success!")
-            return price.getText() + '/' + memberCount.getText().split("후원자")[1]
+            return res
         else : 
             print(response.status_code)
             print("Crawling Failed!")
-            return -1    
+            return None
         
     def GetData(self, selector):
         print("Crawling...")
@@ -61,17 +60,14 @@ class Crawler:
             soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
             data = soup.select_one(selector)
 
-            print(data.getText())
-            print("Crawling Success!")
+            return data.getText()
         else : 
             print(response.status_code)
             print("Crawling Failed!")
+            return None
         
-    def GetDynamicData(self):
-        driver = webdriver.Chrome('')
 
-
-crawler = Crawler()
-crawler.ConnectToDB()
-crawler.CrawlingAndSaveTumblbug()
+# crawler = Crawler()
+# crawler.ConnectToDB()
+# crawler.CrawlingAndSaveTumblbug()
 

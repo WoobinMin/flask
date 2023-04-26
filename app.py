@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import CrawlingTumblbug
 import os
 import ChartDataMaker
+import MongoDBManager
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -12,16 +13,19 @@ img = os.path.join('static', 'img')
 @app.route('/', methods = ['GET' , 'POST'])
 def main():
     cralwer = CrawlingTumblbug.Crawler()
-    cralwer.ConnectToDB()
-    priceNmemberCount = cralwer.GetPriceNMemeberCount()
-    price=priceNmemberCount.split('/')[0]
-    memeberCount=priceNmemberCount.split('/')[1]
-
     chartMaker = ChartDataMaker.ChartDataMaker()
-    chartMaker.ConnectToDB()
-    chartMaker.MakeChartData()
+    mongoDBManager = MongoDBManager.MongoDBManager()
 
-    return render_template('index.html', price=price, memberCount=memeberCount)
+    chartMaker.MakeChartDataToCSV()
+
+    priceNmemberCountList = cralwer.GetPriceNMemeberCount()
+    
+    price=priceNmemberCountList[0]
+    memeberCount=priceNmemberCountList[1]
+    dataCount=mongoDBManager.GetUserDatasCount()
+    userCount=mongoDBManager.GetUserListCount()
+
+    return render_template('index.html', price=price, memberCount=memeberCount,dataCount=dataCount, userCount=userCount)
 
 def ExcuteCrawler():
     cralwer = CrawlingTumblbug.Crawler()

@@ -34,6 +34,7 @@ var PlayTime = []
 var HookCount = []
 var UndoCount = []
 var RetryCount = []
+var PlayerCount = []
 var unit = ""
 
 d3.csv(chartData).then(function(datapoints){
@@ -45,6 +46,7 @@ d3.csv(chartData).then(function(datapoints){
     HookCount.push(datapoints[i].HookCount)
     UndoCount.push(datapoints[i].UndoCount)
     RetryCount.push(datapoints[i].RetryCount)
+    PlayerCount.push(datapoints[i].PlayerCount)
   }
 });
 
@@ -115,6 +117,15 @@ document.getElementById('QADataRetryCount').onclick = function(){
     addData(myLineChart,CamPos[i], RetryCount[i]);
   }
   ChangeInfoes(myLineChart,"RetryCount", "");
+};
+
+document.getElementById('QADataPlayerCount').onclick = function(){
+  removeAllData(myLineChart);
+  for(var i = 0; i < 50; i++)
+  {
+    addData(myLineChart,CamPos[i], PlayerCount[i]);
+  }
+  ChangeInfoes(myLineChart,"PlayerCount", "");
 };
 
 document.getElementById('QADataClear').onclick = function(){
