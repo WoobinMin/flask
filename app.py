@@ -25,18 +25,33 @@ def main():
     dataCount=mongoDBManager.GetUserDatasCount()
     userCount=mongoDBManager.GetUserListCount()
 
-    return render_template('index.html', price=price, memberCount=memeberCount,dataCount=dataCount, userCount=userCount)
+    UUID = mongoDBManager.GetAllUserUUIDs()
+    StartDate = mongoDBManager.GetAllUserStartDates()
+    LastPlayDate = mongoDBManager.GetAllLastPlayDates()
+    LastStage = mongoDBManager.GetAllLastStages()
+    TotalPlayTimes = mongoDBManager.GetAllTotalPlayTimes()
+
+    return render_template('index.html', 
+                           price=price,
+                           memberCount=memeberCount, 
+                           dataCount=dataCount, 
+                           userCount=userCount, 
+                           UUID=UUID, 
+                           StartDate=StartDate,
+                           LastPlayDate=LastPlayDate,
+                           LastStage = LastStage,
+                           TotalPlayTimes=TotalPlayTimes)
 
 def ExcuteCrawler():
     cralwer = CrawlingTumblbug.Crawler()
     cralwer.ConnectToDB()
     cralwer.CrawlingAndSaveTumblbug()
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
-scheduler.start()
+# scheduler = BackgroundScheduler()
+# scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
+# scheduler.start()
  
-atexit.register(lambda:scheduler.shutdown())
+# atexit.register(lambda:scheduler.shutdown())
 
 if __name__ == '__main__':
     app.run()

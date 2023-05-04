@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" href="static/img/base0icon.ico"/>
+
     <title>Hynpytol(Base0) - Dashboard</title>
 
     <!-- Custom fonts for this template-->
@@ -201,6 +203,48 @@
                                         </span>        
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                            <th>UUID</th>
+                                            <th>Start Date</th>
+                                            <th>Last Play Date</th>
+                                            <th>Last Stage</th>
+                                            <th>Total Play Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>UUID</th>
+                                            <th>Start date</th>
+                                            <th>Last Play Date</th>
+                                            <th>Last Stage</th>
+                                            <th>Total Play Time</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        {% for uuid in UUID %}
+                                        <tr>
+                                            <td>{{uuid}}</td>
+                                            <td>{{StartDate[loop.index - 1]}}</td>
+                                            <td>{{LastPlayDate[loop.index - 1]}}</td>
+                                            <td>{{LastStage[loop.index - 1]}}</td>
+                                            <td>{{TotalPlayTimes[loop.index - 1]}}</td>
+                                        </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
