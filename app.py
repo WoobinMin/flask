@@ -42,16 +42,16 @@ def main():
                            LastStage = LastStage,
                            TotalPlayTimes=TotalPlayTimes)
 
-def ExcuteCrawler():
-    cralwer = CrawlingTumblbug.Crawler()
-    cralwer.ConnectToDB()
-    cralwer.CrawlingAndSaveTumblbug()
+# def ExcuteCrawler():
+#     cralwer = CrawlingTumblbug.Crawler()
+#     cralwer.ConnectToDB()
+#     cralwer.CrawlingAndSaveTumblbug()
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
-scheduler.start()
+# scheduler = BackgroundScheduler()
+# scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
+# scheduler.start()
  
-atexit.register(lambda:scheduler.shutdown())
+# atexit.register(lambda:scheduler.shutdown())
 
 if __name__ == '__main__':
     app.run()
