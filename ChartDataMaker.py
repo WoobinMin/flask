@@ -124,7 +124,8 @@ class ChartDataMaker:
     def GetTotalPlayTimeByList(self, dic : dict, camPosList : list):
         res = 0
         for i in camPosList:
-            res = res + int(dic[i])
+            if i in dic.keys():
+                res = res + int(dic[i])
 
         return res
 
