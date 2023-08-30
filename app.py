@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-import CrawlingTumblbug
+import DataParser_BIC2023
 import os
-import ChartDataMaker
+import DataMakerByMongoDB
 import MongoDBManager
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -12,46 +12,25 @@ img = os.path.join('static', 'img')
  
 @app.route('/', methods = ['GET' , 'POST'])
 def main():
-    cralwer = CrawlingTumblbug.Crawler()
-    chartMaker = ChartDataMaker.ChartDataMaker()
-    mongoDBManager = MongoDBManager.MongoDBManager()
+    dataMaker = DataMakerByMongoDB.DataMakerByMongoDB('Hynpytol' , 'UserDatas_BIC2023', 'UserList_BIC2023')
+    dataMaker.MakeJsonFile("2023-08-26")
+    dataMaker.MakeJsonFile("2023-08-27")
+    #mongoDBManager = MongoDBManager.MongoDBManager()
 
-    chartMaker.MakeChartDataToCSV()
+    bicParser = DataParser_BIC2023.DataParser_BIC2023(dataMaker.GetAssignedUserDatas(), dataMaker.GetAssignedUserLists())
 
-    priceNmemberCountList = cralwer.GetPriceNMemeberCount()
-    
-    price=priceNmemberCountList[0]
-    memeberCount=priceNmemberCountList[1]
-    dataCount=mongoDBManager.GetUserDatasCount()
-    userCount=mongoDBManager.GetUserListCount()
+    day1Data = bicParser.GetDayData("2023-08-26")
+    day2Data = bicParser.GetDayData("2023-08-27")
 
-    UUID = mongoDBManager.GetAllUserUUIDs()
-    StartDate = mongoDBManager.GetAllUserStartDates()
-    LastPlayDate = mongoDBManager.GetAllLastPlayDates()
-    LastStage = mongoDBManager.GetAllLastStages()
-    TotalPlayTimes = mongoDBManager.GetAllTotalPlayTimes()
 
     return render_template('index.html', 
-                           price=price,
-                           memberCount=memeberCount, 
-                           dataCount=dataCount, 
-                           userCount=userCount, 
-                           UUID=UUID, 
-                           StartDate=StartDate,
-                           LastPlayDate=LastPlayDate,
-                           LastStage = LastStage,
-                           TotalPlayTimes=TotalPlayTimes)
-
-# def ExcuteCrawler():
-#     cralwer = CrawlingTumblbug.Crawler()
-#     cralwer.ConnectToDB()
-#     cralwer.CrawlingAndSaveTumblbug()
-
-# scheduler = BackgroundScheduler()
-# scheduler.add_job(func=ExcuteCrawler, trigger="cron", minute=0)
-# scheduler.start()
- 
-# atexit.register(lambda:scheduler.shutdown())
+                           day1TotalPlayTime=day1Data.dayTotalPlayTime, 
+                           day1TotalDataCount=day1Data.dayTotalDataCount, 
+                           day1TotalPlayerCount=day1Data.dayTotalPlayerCount, 
+                           day2TotalPlayTime=day2Data.dayTotalPlayTime, 
+                           day2TotalDataCount=day2Data.dayTotalDataCount, 
+                           day2TotalPlayerCount=day2Data.dayTotalPlayerCount, 
+                           )
 
 if __name__ == '__main__':
     app.run()

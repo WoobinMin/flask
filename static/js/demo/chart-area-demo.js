@@ -27,198 +27,344 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec) + unit;
 }
 
+var jsonParsingDatas1 = {
+  CamPosName: [],
+  PlayTime: [],
+  HookCount: [],
+  UndoCount: [],
+  RetryCount: [],
+}
 
-const chartData = 'static/document/QAData.csv';
-var CamPos = []
-var PlayTime = []
-var HookCount = []
-var UndoCount = []
-var RetryCount = []
-var PlayerCount = []
+var jsonParsingDatas2 = {
+  CamPosName: [],
+  PlayTime: [],
+  HookCount: [],
+  UndoCount: [],
+  RetryCount: [],
+}
+
 var unit = ""
 
-d3.csv(chartData).then(function(datapoints){
-    
-  for(i = 0; i < 50; i++)
+
+var xhr1 = new XMLHttpRequest();
+var jsonData = [];
+xhr1.open("GET", "static/document/UserStageDatas_2023-08-26.json" , true)
+xhr1.onreadystatechange = function() {
+  if(xhr1.readyState == 4 && xhr1.status == 200)
   {
-    CamPos.push(datapoints[i].CamPos);
-    PlayTime.push(datapoints[i].PlayTime);
-    HookCount.push(datapoints[i].HookCount)
-    UndoCount.push(datapoints[i].UndoCount)
-    RetryCount.push(datapoints[i].RetryCount)
-    PlayerCount.push(datapoints[i].PlayerCount)
+    jsonData.push(JSON.parse(xhr1.responseText));
+    for (var i = 0; i < jsonData[0].length; i++) {
+      jsonParsingDatas1.CamPosName.push(jsonData[0][i].CamPosName);
+      jsonParsingDatas1.PlayTime.push(jsonData[0][i].PlayTime);
+      jsonParsingDatas1.HookCount.push(jsonData[0][i].HookCount)
+      jsonParsingDatas1.UndoCount.push(jsonData[0][i].UndoCount)
+      jsonParsingDatas1.RetryCount.push(jsonData[0][i].RetryCount)
+    }
   }
-});
-
-function addData(chart, label, data) {
-  chart.data.labels.push(label);
-  chart.data.datasets.forEach((dataset) => {
-      dataset.data.push(data);
-  });
-  chart.update()
 }
+xhr1.send();
 
-function removeData(chart) {
-  chart.data.labels.pop();
-  chart.data.datasets.forEach((dataset) => {
-      dataset.data.pop();
-  });
-  chart.update()
-}
-
-function removeAllData(chart){
-  for(var i = 0; i < 50; i++)
+var xhr2 = new XMLHttpRequest();
+xhr2.open("GET", "static/document/UserStageDatas_2023-08-27.json" , true)
+xhr2.onreadystatechange = function() {
+  if(xhr2.readyState == 4 && xhr2.status == 200)
   {
-    chart.data.labels.pop();  
-    chart.data.datasets.forEach((dataset) => {
+    jsonData.push(JSON.parse(xhr2.responseText));
+    for (var i = 0; i < jsonData[1].length; i++) {
+      jsonParsingDatas2.CamPosName.push(jsonData[1][i].CamPosName);
+      jsonParsingDatas2.PlayTime.push(jsonData[1][i].PlayTime);
+      jsonParsingDatas2.HookCount.push(jsonData[1][i].HookCount)
+      jsonParsingDatas2.UndoCount.push(jsonData[1][i].UndoCount)
+      jsonParsingDatas2.RetryCount.push(jsonData[1][i].RetryCount)
+    }
+  }
+
+  // 기본으로 PlayTime을 보여줌
+  SetPlayTimeGraph();
+}
+xhr2.send();
+
+document.addEventListener("DOMContentLoaded", Init)
+
+function Init()
+{
+  var checkBox1 = document.getElementById("day1CheckBox");
+  var checkBox2 = document.getElementById("day2CheckBox");
+
+  checkBox1.addEventListener("change", function(){
+    console.log("checkbox1 changed : " + !checkBox1.checked);
+    SetDataSetHidden(0, !checkBox1.checked);
+    myLineChart.update();
+  });
+
+  checkBox2.addEventListener("change", function(){
+    SetDataSetHidden(1, !checkBox2.checked);
+    console.log("checkbox2 changed : " + !checkBox2.checked);
+    myLineChart.update();
+  });
+
+}
+
+//charData에 라벨추가
+function AddLabel(label){
+  chartData.labels.push(label);
+}
+
+//chartData에 dataset[datasetIndex]에 데이터 추가
+function AddData(datasetIndex, data) {
+  chartData.datasets[datasetIndex].data.push(data);
+}
+
+//chartdata에 할당된 data와 label 삭제
+function RemoveAllData(){
+  for(var i = 0; i < jsonData[0].length; i++)
+  {
+    chartData.labels.pop();
+    chartData.datasets.forEach((dataset) => {
       dataset.data.pop();
     });
   }
-  myLineChart.update();
 }
 
-function ChangeInfoes(chart, label, unit){
-  chart.data.datasets[0].label  = label;
+// 표 좌측 단위 변경 및 마우스 올릴 시 나오는 popup데이터 표시 변경
+function ChangeInfoes(datasetIndex, label, unit){
+  chartData.datasets[datasetIndex].label  = label;
   this.unit = unit;
-  chart.update();
 }
 
-document.getElementById('QADataPlayTime').onclick = function(){
-  removeAllData(myLineChart);
-  for(var i = 0; i < 50; i++)
-  {
-    addData(myLineChart,CamPos[i], PlayTime[i]);
-  }
-  ChangeInfoes(myLineChart,"PlayTime", "(s)");
-};
+//chartData의 datasets[datasetIndex]가 숨겨질 지 설정
+function SetDataSetHidden(datasetIndex, isHidden)
+{
+  chartData.datasets[datasetIndex].hidden = isHidden;
+}
 
-document.getElementById('QADataHookCount').onclick = function(){
-  removeAllData(myLineChart);
-  for(var i = 0; i < 50; i++)
-  {
-    addData(myLineChart,CamPos[i], HookCount[i]);
-  }
-  ChangeInfoes(myLineChart,"HookCount", "");
-};
+// jsonData[0]에 등록된 모든 Label을 chartData에 추가
+function AddAllLabelToChartData()
+{
+  for(var i = 0; i < jsonData[0].length; i++)
+    AddLabel(jsonParsingDatas1.CamPosName[i]);
+}
 
-document.getElementById('QADataUndoCount').onclick = function(){
-  removeAllData(myLineChart);
-  for(var i = 0; i < 50; i++)
+// dayIndex날짜의 CheckBox의 값을 return
+function GetCheckBoxValue(dayIndex)
+{
+  var checkBoxID = "";
+  if(dayIndex == 0)
   {
-    addData(myLineChart,CamPos[i], UndoCount[i]);
+    checkBoxID = "day1CheckBox";
   }
-  ChangeInfoes(myLineChart,"UndoCount", "");
-};
+  else if(dayIndex == 1)
+  {
+    checkBoxID = "day2CheckBox";
+  }
+  else
+    return false;
 
-document.getElementById('QADataRetryCount').onclick = function(){
-  removeAllData(myLineChart);
-  for(var i = 0; i < 50; i++)
-  {
-    addData(myLineChart,CamPos[i], RetryCount[i]);
-  }
-  ChangeInfoes(myLineChart,"RetryCount", "");
-};
+  var checkBox = document.getElementById(checkBoxID);
+  if(checkBox == null) return false;
 
-document.getElementById('QADataPlayerCount').onclick = function(){
-  removeAllData(myLineChart);
-  for(var i = 0; i < 50; i++)
-  {
-    addData(myLineChart,CamPos[i], PlayerCount[i]);
-  }
-  ChangeInfoes(myLineChart,"PlayerCount", "");
-};
+  return checkBox.checked;
+}
+
+document.getElementById('QADataPlayTime').onclick = SetPlayTimeGraph;
+document.getElementById('QADataHookCount').onclick = SetHookCountGraph;
+document.getElementById('QADataUndoCount').onclick = SetUndoCountGraph;
+document.getElementById('QADataRetryCount').onclick = SetRetryCountGraph;
+
+function SetPlayTimeGraph()
+{
+  RemoveAllData(myLineChart);
+  AddAllLabelToChartData();
+
+  for(var i = 0; i < jsonData[0].length; i++)
+    AddData(0, jsonParsingDatas1.PlayTime[i]);
+
+  for(var i = 0; i < jsonData[1].length; i++)
+    AddData(1, jsonParsingDatas2.PlayTime[i]);
+
+  SetDataSetHidden(0, !GetCheckBoxValue(0));
+  SetDataSetHidden(1, !GetCheckBoxValue(1));
+    
+  ChangeInfoes(0,"Day1", "(s)");
+  ChangeInfoes(1,"Day2", "(s)");
+  myLineChart.update()
+}
+
+function SetHookCountGraph()
+{
+  RemoveAllData(myLineChart);
+  AddAllLabelToChartData();
+
+  for(var i = 0; i < jsonData[0].length; i++)
+    AddData(0, jsonParsingDatas1.HookCount[i]);
+
+  for(var i = 0; i < jsonData[1].length; i++)
+    AddData(1, jsonParsingDatas2.HookCount[i]);
+
+  SetDataSetHidden(0, !GetCheckBoxValue(0));
+  SetDataSetHidden(1, !GetCheckBoxValue(1));
+    
+  ChangeInfoes(0,"Day1", "(times)");
+  ChangeInfoes(1,"Day2", "(times)");
+  myLineChart.update()
+}
+
+function SetUndoCountGraph()
+{
+  RemoveAllData(myLineChart);
+  AddAllLabelToChartData();
+
+  for(var i = 0; i < jsonData[0].length; i++)
+    AddData(0, jsonParsingDatas1.UndoCount[i]);
+
+  for(var i = 0; i < jsonData[1].length; i++)
+    AddData(1, jsonParsingDatas2.UndoCount[i]);
+
+  SetDataSetHidden(0, !GetCheckBoxValue(0));
+  SetDataSetHidden(1, !GetCheckBoxValue(1));
+    
+  ChangeInfoes(0,"Day1", "(times)");
+  ChangeInfoes(1,"Day2", "(times)");
+  myLineChart.update()
+}
+
+function SetRetryCountGraph()
+{
+  RemoveAllData(myLineChart);
+  AddAllLabelToChartData();
+
+  for(var i = 0; i < jsonData[0].length; i++)
+    AddData(0, jsonParsingDatas1.RetryCount[i]);
+
+  for(var i = 0; i < jsonData[1].length; i++)
+    AddData(1, jsonParsingDatas2.RetryCount[i]);
+
+  SetDataSetHidden(0, !GetCheckBoxValue(0));
+  SetDataSetHidden(1, !GetCheckBoxValue(1));
+    
+  ChangeInfoes(0,"Day1", "(times)");
+  ChangeInfoes(1,"Day2", "(times)");
+  myLineChart.update()
+}
 
 document.getElementById('QADataClear').onclick = function(){
-  removeAllData(myLineChart);
-  ChangeInfoes(myLineChart,"", "");
+  RemoveAllData(myLineChart);
+  ChangeInfoes(0,"", "");
+  ChangeInfoes(1,"", "");
 };
+
+var chartData = {
+  labels: [],
+  datasets: [{
+    label: "PlayTime",
+    lineTension: 0,
+    backgroundColor: "rgba(255, 116, 115, 0.05)",
+    borderColor: "rgba(255, 116, 115, 1)",
+    pointRadius: 3,
+    pointBackgroundColor: "rgba(255, 116, 115, 1)",
+    pointBorderColor: "rgba(255, 116, 115, 1)",
+    pointHoverRadius: 3,
+    pointHoverBackgroundColor: "rgba(255, 116, 115, 1)",
+    pointHoverBorderColor: "rgba(255, 116, 115, 1)",
+    pointHitRadius: 10,
+    pointBorderWidth: 2,
+    data: [],
+    hidden: false,
+  },
+  {
+    label: "PlayTime",
+    lineTension: 0,
+    backgroundColor: "rgba(255, 201, 82, 0.05)",
+    borderColor: "rgba(255, 201, 82, 1)",
+    pointRadius: 3,
+    pointBackgroundColor: "rgba(255, 201, 82, 1)",
+    pointBorderColor: "rgba(255, 201, 82, 1)",
+    pointHoverRadius: 3,
+    pointHoverBackgroundColor: "rgba(255, 201, 82, 1)",
+    pointHoverBorderColor: "rgba(255, 201, 82, 1)",
+    pointHitRadius: 10,
+    pointBorderWidth: 2,
+    data: [],
+    hidden: false,
+  }],
+}
+
+var chartOption = {
+  maintainAspectRatio: false,
+  layout: {
+    padding: {
+      left: 10,
+      right: 25,
+      top: 25,
+      bottom: 0
+    }
+  },
+  scales: {
+    xAxes: [{
+      time: {
+        unit: 'date'
+      },
+      gridLines: {
+        display: false,
+        drawBorder: false
+      },
+      ticks: {
+        autoSkip : false,
+        maxRotation : 90,
+        minRotationRotation : 90,
+      }
+    }],
+    yAxes: [{
+      ticks: {
+        maxTicksLimit: 10,
+        padding: 10,
+        // Include a dollar sign in the ticks
+        callback: function(value, index, values) {
+          return number_format(value);
+        }
+      },
+      gridLines: {
+        color: "rgb(234, 236, 244)",
+        zeroLineColor: "rgb(234, 236, 244)",
+        drawBorder: false,
+        borderDash: [2],
+        zeroLineBorderDash: [2]
+      }
+    }],
+  },
+  legend: {
+    display: true,
+    position: 'bottom'
+  },
+  tooltips: {
+    backgroundColor: "rgb(255,255,255)",
+    bodyFontColor: "#858796",
+    titleMarginBottom: 10,
+    titleFontColor: '#6e707e',
+    titleFontSize: 14,
+    borderColor: '#dddfeb',
+    borderWidth: 1,
+    xPadding: 15,
+    yPadding: 15,
+    displayColors: false,
+    intersect: false,
+    mode: 'index',
+    caretPadding: 10,
+    callbacks: {
+      label: function(tooltipItem, chart) {
+        var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+        return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
+      }
+    }
+  }
+}
 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
-  data: {
-    labels: [],
-    datasets: [{
-      label: "PlayTime",
-      lineTension: 0,
-      backgroundColor: "rgba(78, 115, 223, 0.05)",
-      borderColor: "rgba(78, 115, 223, 1)",
-      pointRadius: 3,
-      pointBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointBorderColor: "rgba(78, 115, 223, 1)",
-      pointHoverRadius: 3,
-      pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-      pointHitRadius: 10,
-      pointBorderWidth: 2,
-      data: [],
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 10,
-        right: 25,
-        top: 25,
-        bottom: 0
-      }
-    },
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'date'
-        },
-        gridLines: {
-          display: false,
-          drawBorder: false
-        },
-        ticks: {
-          maxTicksLimit: 13
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          maxTicksLimit: 10,
-          padding: 10,
-          // Include a dollar sign in the ticks
-          callback: function(value, index, values) {
-            return number_format(value);
-          }
-        },
-        gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
-          borderDash: [2],
-          zeroLineBorderDash: [2]
-        }
-      }],
-    },
-    legend: {
-      display: false
-    },
-    tooltips: {
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      titleMarginBottom: 10,
-      titleFontColor: '#6e707e',
-      titleFontSize: 14,
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      intersect: false,
-      mode: 'index',
-      caretPadding: 10,
-      callbacks: {
-        label: function(tooltipItem, chart) {
-          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
-        }
-      }
-    }
-  }
+  data: chartData,
+  options: chartOption
 });
+
+
