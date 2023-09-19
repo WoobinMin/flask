@@ -161,6 +161,5 @@ class DataMakerByMongoDB:
             json_file.write(json_data)
 
 
-maker = DataMakerByMongoDB("Hynpytol" , "UserDatas_BIC2023" , "UserList_BIC2023")
-maker.MakeJsonFile("2023-08-26")
-maker.MakeJsonFile("2023-08-27")
+maker = DataMakerByMongoDB("Hynpytol" , "UserDatas" , "UserList")
+maker.RemoveMany()

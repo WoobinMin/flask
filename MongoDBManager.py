@@ -19,6 +19,8 @@ class MongoDBManager:
         self.UserList_documents_count = self.db['UserList'].count_documents({})
         self.Tumblbug_documents_count = self.db['Tumblbug'].count_documents({})
 
+
+
     def GetAllUserUUIDs(self):
         res = []
         self.UserList_documents.rewind()
