@@ -19,6 +19,18 @@ class DataParser_BIC2023:
         dayData.dayTotalPlayerCount = self.GetDayTotalPlayerCount(dateTime)
         return dayData
 
+    def GetData(self)->DayData_BIC2023:
+        dayData = DayData_BIC2023()
+        dayData.dayTotalPlayTime = self.GetTotalPlayTime()
+        dayData.dayTotalDataCount = self.GetTotalDataCount()
+        dayData.dayTotalPlayerCount = self.GetTotalPlayerCount()
+        return dayData
+
+    def GetTotalPlayTime(self)->float:
+        result = 0.0
+        for userListData  in self.userListDatas:
+            result += userListData.totalPlayTime
+        return result
 
     def GetDayTotalPlayTime(self, dateTime : str) -> float:
         result = 0.0
@@ -29,6 +41,12 @@ class DataParser_BIC2023:
 
         return result
     
+    def GetTotalPlayerCount(self) -> float:
+        result = 0
+        for userListData  in self.userListDatas:
+            result += 1
+        return result
+
     def GetDayTotalPlayerCount(self, dateTime : str) -> float:
         result = 0
         for userListData  in self.userListDatas:
@@ -38,6 +56,12 @@ class DataParser_BIC2023:
 
         return result
     
+    def GetTotalDataCount(self)->float:
+        result = 0
+        for userListData  in self.userListDatas:
+            result += userListData.visitedStages.__len__()
+        return result
+
     def GetDayTotalDataCount(self, dateTime : str) -> float:
         result = 0
         for userListData  in self.userListDatas:

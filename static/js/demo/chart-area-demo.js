@@ -35,20 +35,12 @@ var jsonParsingDatas1 = {
   RetryCount: [],
 }
 
-var jsonParsingDatas2 = {
-  CamPosName: [],
-  PlayTime: [],
-  HookCount: [],
-  UndoCount: [],
-  RetryCount: [],
-}
-
 var unit = ""
 
 
 var xhr1 = new XMLHttpRequest();
 var jsonData = [];
-xhr1.open("GET", "static/document/UserStageDatas_2023-08-26.json" , true)
+xhr1.open("GET", "static/document/UserStageDatas.json" , true)
 xhr1.onreadystatechange = function() {
   if(xhr1.readyState == 4 && xhr1.status == 200)
   {
@@ -64,45 +56,11 @@ xhr1.onreadystatechange = function() {
 }
 xhr1.send();
 
-var xhr2 = new XMLHttpRequest();
-xhr2.open("GET", "static/document/UserStageDatas_2023-08-27.json" , true)
-xhr2.onreadystatechange = function() {
-  if(xhr2.readyState == 4 && xhr2.status == 200)
-  {
-    jsonData.push(JSON.parse(xhr2.responseText));
-    for (var i = 0; i < jsonData[1].length; i++) {
-      jsonParsingDatas2.CamPosName.push(jsonData[1][i].CamPosName);
-      jsonParsingDatas2.PlayTime.push(jsonData[1][i].PlayTime);
-      jsonParsingDatas2.HookCount.push(jsonData[1][i].HookCount)
-      jsonParsingDatas2.UndoCount.push(jsonData[1][i].UndoCount)
-      jsonParsingDatas2.RetryCount.push(jsonData[1][i].RetryCount)
-    }
-  }
-
-  // 기본으로 PlayTime을 보여줌
-  SetPlayTimeGraph();
-}
-xhr2.send();
-
 document.addEventListener("DOMContentLoaded", Init)
 
 function Init()
 {
-  var checkBox1 = document.getElementById("day1CheckBox");
-  var checkBox2 = document.getElementById("day2CheckBox");
-
-  checkBox1.addEventListener("change", function(){
-    console.log("checkbox1 changed : " + !checkBox1.checked);
-    SetDataSetHidden(0, !checkBox1.checked);
-    myLineChart.update();
-  });
-
-  checkBox2.addEventListener("change", function(){
-    SetDataSetHidden(1, !checkBox2.checked);
-    console.log("checkbox2 changed : " + !checkBox2.checked);
-    myLineChart.update();
-  });
-
+  SetPlayTimeGraph();
 }
 
 //charData에 라벨추가
@@ -145,27 +103,6 @@ function AddAllLabelToChartData()
     AddLabel(jsonParsingDatas1.CamPosName[i]);
 }
 
-// dayIndex날짜의 CheckBox의 값을 return
-function GetCheckBoxValue(dayIndex)
-{
-  var checkBoxID = "";
-  if(dayIndex == 0)
-  {
-    checkBoxID = "day1CheckBox";
-  }
-  else if(dayIndex == 1)
-  {
-    checkBoxID = "day2CheckBox";
-  }
-  else
-    return false;
-
-  var checkBox = document.getElementById(checkBoxID);
-  if(checkBox == null) return false;
-
-  return checkBox.checked;
-}
-
 document.getElementById('QADataPlayTime').onclick = SetPlayTimeGraph;
 document.getElementById('QADataHookCount').onclick = SetHookCountGraph;
 document.getElementById('QADataUndoCount').onclick = SetUndoCountGraph;
@@ -179,14 +116,7 @@ function SetPlayTimeGraph()
   for(var i = 0; i < jsonData[0].length; i++)
     AddData(0, jsonParsingDatas1.PlayTime[i]);
 
-  for(var i = 0; i < jsonData[1].length; i++)
-    AddData(1, jsonParsingDatas2.PlayTime[i]);
-
-  SetDataSetHidden(0, !GetCheckBoxValue(0));
-  SetDataSetHidden(1, !GetCheckBoxValue(1));
-    
   ChangeInfoes(0,"Day1", "(s)");
-  ChangeInfoes(1,"Day2", "(s)");
   myLineChart.update()
 }
 
@@ -198,14 +128,7 @@ function SetHookCountGraph()
   for(var i = 0; i < jsonData[0].length; i++)
     AddData(0, jsonParsingDatas1.HookCount[i]);
 
-  for(var i = 0; i < jsonData[1].length; i++)
-    AddData(1, jsonParsingDatas2.HookCount[i]);
-
-  SetDataSetHidden(0, !GetCheckBoxValue(0));
-  SetDataSetHidden(1, !GetCheckBoxValue(1));
-    
   ChangeInfoes(0,"Day1", "(times)");
-  ChangeInfoes(1,"Day2", "(times)");
   myLineChart.update()
 }
 
@@ -217,14 +140,8 @@ function SetUndoCountGraph()
   for(var i = 0; i < jsonData[0].length; i++)
     AddData(0, jsonParsingDatas1.UndoCount[i]);
 
-  for(var i = 0; i < jsonData[1].length; i++)
-    AddData(1, jsonParsingDatas2.UndoCount[i]);
-
-  SetDataSetHidden(0, !GetCheckBoxValue(0));
-  SetDataSetHidden(1, !GetCheckBoxValue(1));
     
   ChangeInfoes(0,"Day1", "(times)");
-  ChangeInfoes(1,"Day2", "(times)");
   myLineChart.update()
 }
 
@@ -236,21 +153,13 @@ function SetRetryCountGraph()
   for(var i = 0; i < jsonData[0].length; i++)
     AddData(0, jsonParsingDatas1.RetryCount[i]);
 
-  for(var i = 0; i < jsonData[1].length; i++)
-    AddData(1, jsonParsingDatas2.RetryCount[i]);
-
-  SetDataSetHidden(0, !GetCheckBoxValue(0));
-  SetDataSetHidden(1, !GetCheckBoxValue(1));
-    
   ChangeInfoes(0,"Day1", "(times)");
-  ChangeInfoes(1,"Day2", "(times)");
   myLineChart.update()
 }
 
 document.getElementById('QADataClear').onclick = function(){
   RemoveAllData(myLineChart);
   ChangeInfoes(0,"", "");
-  ChangeInfoes(1,"", "");
 };
 
 var chartData = {

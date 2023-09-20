@@ -1,0 +1,1339 @@
+[
+    {
+        "CamPosName": "N2",
+        "PlayTime": 6.1,
+        "HookCount": 6.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "F1",
+        "PlayTime": 42.0,
+        "HookCount": 98.8,
+        "UndoCount": 1.0,
+        "RetryCount": 2.0
+    },
+    {
+        "CamPosName": "N3",
+        "PlayTime": 4.0,
+        "HookCount": 4.4,
+        "UndoCount": 0.1,
+        "RetryCount": 0.3
+    },
+    {
+        "CamPosName": "F2",
+        "PlayTime": 184.8,
+        "HookCount": 300.5,
+        "UndoCount": 8.0,
+        "RetryCount": 3.8
+    },
+    {
+        "CamPosName": "N5",
+        "PlayTime": 3.4,
+        "HookCount": 12.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "T1",
+        "PlayTime": 30.7,
+        "HookCount": 16.6,
+        "UndoCount": 0.0,
+        "RetryCount": 0.1
+    },
+    {
+        "CamPosName": "T2",
+        "PlayTime": 45.7,
+        "HookCount": 25.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "T3",
+        "PlayTime": 16.6,
+        "HookCount": 24.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "T4",
+        "PlayTime": 6.0,
+        "HookCount": 25.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "T5",
+        "PlayTime": 14.5,
+        "HookCount": 49.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "LV1",
+        "PlayTime": 23.0,
+        "HookCount": 47.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "A1",
+        "PlayTime": 85.1,
+        "HookCount": 27.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "A2",
+        "PlayTime": 32.8,
+        "HookCount": 51.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "A3",
+        "PlayTime": 33.9,
+        "HookCount": 56.6,
+        "UndoCount": 1.9,
+        "RetryCount": 0.1
+    },
+    {
+        "CamPosName": "A4",
+        "PlayTime": 94.8,
+        "HookCount": 69.6,
+        "UndoCount": 0.4,
+        "RetryCount": 0.3
+    },
+    {
+        "CamPosName": "A5",
+        "PlayTime": 109.9,
+        "HookCount": 85.6,
+        "UndoCount": 6.1,
+        "RetryCount": 0.6
+    },
+    {
+        "CamPosName": "LE1",
+        "PlayTime": 8.5,
+        "HookCount": 20.6,
+        "UndoCount": 0.0,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "LE2",
+        "PlayTime": 10.0,
+        "HookCount": 23.6,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "LN1",
+        "PlayTime": 6.0,
+        "HookCount": 11.2,
+        "UndoCount": 0.1,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "LN2",
+        "PlayTime": 7.4,
+        "HookCount": 14.3,
+        "UndoCount": 0.1,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B0",
+        "PlayTime": 7.7,
+        "HookCount": 12.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B1",
+        "PlayTime": 25.9,
+        "HookCount": 57.0,
+        "UndoCount": 0.5,
+        "RetryCount": 0.8
+    },
+    {
+        "CamPosName": "B2",
+        "PlayTime": 39.1,
+        "HookCount": 77.0,
+        "UndoCount": 1.2,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "B3",
+        "PlayTime": 606.2,
+        "HookCount": 590.0,
+        "UndoCount": 45.0,
+        "RetryCount": 6.0
+    },
+    {
+        "CamPosName": "B4",
+        "PlayTime": 101.9,
+        "HookCount": 132.0,
+        "UndoCount": 13.2,
+        "RetryCount": 1.3
+    },
+    {
+        "CamPosName": "B5",
+        "PlayTime": 640.2,
+        "HookCount": 233.0,
+        "UndoCount": 13.0,
+        "RetryCount": 4.8
+    },
+    {
+        "CamPosName": "LN3",
+        "PlayTime": 7.6,
+        "HookCount": 15.4,
+        "UndoCount": 0.0,
+        "RetryCount": 0.1
+    },
+    {
+        "CamPosName": "C0",
+        "PlayTime": 9.1,
+        "HookCount": 18.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C1",
+        "PlayTime": 36.3,
+        "HookCount": 73.2,
+        "UndoCount": 0.5,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "C2",
+        "PlayTime": 30.5,
+        "HookCount": 58.5,
+        "UndoCount": 1.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C3",
+        "PlayTime": 57.1,
+        "HookCount": 94.2,
+        "UndoCount": 7.0,
+        "RetryCount": 0.8
+    },
+    {
+        "CamPosName": "C4",
+        "PlayTime": 198.2,
+        "HookCount": 314.8,
+        "UndoCount": 0.8,
+        "RetryCount": 5.0
+    },
+    {
+        "CamPosName": "C5",
+        "PlayTime": 172.0,
+        "HookCount": 258.2,
+        "UndoCount": 24.0,
+        "RetryCount": 2.0
+    },
+    {
+        "CamPosName": "D0",
+        "PlayTime": 9.7,
+        "HookCount": 8.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D1",
+        "PlayTime": 14.7,
+        "HookCount": 30.2,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D2",
+        "PlayTime": 44.4,
+        "HookCount": 71.2,
+        "UndoCount": 2.8,
+        "RetryCount": 0.5
+    },
+    {
+        "CamPosName": "D3",
+        "PlayTime": 69.7,
+        "HookCount": 119.2,
+        "UndoCount": 3.5,
+        "RetryCount": 0.8
+    },
+    {
+        "CamPosName": "D4",
+        "PlayTime": 61.6,
+        "HookCount": 106.4,
+        "UndoCount": 3.8,
+        "RetryCount": 1.2
+    },
+    {
+        "CamPosName": "D5",
+        "PlayTime": 155.3,
+        "HookCount": 278.0,
+        "UndoCount": 7.0,
+        "RetryCount": 2.8
+    },
+    {
+        "CamPosName": "D?",
+        "PlayTime": 21.7,
+        "HookCount": 48.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "N1",
+        "PlayTime": 9.4,
+        "HookCount": 14.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": " ",
+        "PlayTime": 22.8,
+        "HookCount": 2.1,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M1",
+        "PlayTime": 22.8,
+        "HookCount": 36.2,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M2",
+        "PlayTime": 18.1,
+        "HookCount": 28.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M3",
+        "PlayTime": 81.3,
+        "HookCount": 9.6,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M4",
+        "PlayTime": 41.1,
+        "HookCount": 67.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M5",
+        "PlayTime": 18.1,
+        "HookCount": 23.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M6",
+        "PlayTime": 40.5,
+        "HookCount": 59.4,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "M7",
+        "PlayTime": 63.3,
+        "HookCount": 40.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC0",
+        "PlayTime": 40.6,
+        "HookCount": 19.5,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC1",
+        "PlayTime": 41.1,
+        "HookCount": 7.1,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC2",
+        "PlayTime": 25.2,
+        "HookCount": 14.6,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC3",
+        "PlayTime": 12.9,
+        "HookCount": 26.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC4",
+        "PlayTime": 27.9,
+        "HookCount": 30.9,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC5",
+        "PlayTime": 110.2,
+        "HookCount": 67.7,
+        "UndoCount": 0.7,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MC6",
+        "PlayTime": 80.2,
+        "HookCount": 57.6,
+        "UndoCount": 0.1,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "A6",
+        "PlayTime": 27.8,
+        "HookCount": 42.0,
+        "UndoCount": 2.6,
+        "RetryCount": 0.4
+    },
+    {
+        "CamPosName": "A7",
+        "PlayTime": 149.8,
+        "HookCount": 182.8,
+        "UndoCount": 10.8,
+        "RetryCount": 0.8
+    },
+    {
+        "CamPosName": "A-?",
+        "PlayTime": 132.8,
+        "HookCount": 17.4,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "A-??",
+        "PlayTime": 55.0,
+        "HookCount": 51.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "A-???",
+        "PlayTime": 28.6,
+        "HookCount": 59.5,
+        "UndoCount": 3.3,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "A-H",
+        "PlayTime": 39.1,
+        "HookCount": 5.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "AL1",
+        "PlayTime": 10.6,
+        "HookCount": 25.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "AL2",
+        "PlayTime": 198.3,
+        "HookCount": 181.0,
+        "UndoCount": 0.0,
+        "RetryCount": 3.4
+    },
+    {
+        "CamPosName": "AL3",
+        "PlayTime": 122.7,
+        "HookCount": 237.2,
+        "UndoCount": 0.0,
+        "RetryCount": 6.5
+    },
+    {
+        "CamPosName": "AL4",
+        "PlayTime": 46.6,
+        "HookCount": 116.2,
+        "UndoCount": 0.0,
+        "RetryCount": 1.0
+    },
+    {
+        "CamPosName": "KA1",
+        "PlayTime": 16.0,
+        "HookCount": 11.5,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "KA2",
+        "PlayTime": 13.3,
+        "HookCount": 21.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "KA3",
+        "PlayTime": 9.6,
+        "HookCount": 16.2,
+        "UndoCount": 0.0,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "KA4",
+        "PlayTime": 17.8,
+        "HookCount": 16.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "KA5",
+        "PlayTime": 23.0,
+        "HookCount": 31.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "B6",
+        "PlayTime": 37.5,
+        "HookCount": 92.3,
+        "UndoCount": 1.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B7",
+        "PlayTime": 61.1,
+        "HookCount": 100.3,
+        "UndoCount": 4.7,
+        "RetryCount": 1.0
+    },
+    {
+        "CamPosName": "B-?",
+        "PlayTime": 8.7,
+        "HookCount": 14.7,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B-??",
+        "PlayTime": 6.3,
+        "HookCount": 19.5,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B-???",
+        "PlayTime": 4.8,
+        "HookCount": 10.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B-????",
+        "PlayTime": 2.2,
+        "HookCount": 9.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "B-?????",
+        "PlayTime": 65.6,
+        "HookCount": 114.3,
+        "UndoCount": 18.0,
+        "RetryCount": 0.3
+    },
+    {
+        "CamPosName": "B-NK",
+        "PlayTime": 5.0,
+        "HookCount": 4.1,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "BL1",
+        "PlayTime": 92.7,
+        "HookCount": 223.0,
+        "UndoCount": 0.0,
+        "RetryCount": 2.3
+    },
+    {
+        "CamPosName": "BL2",
+        "PlayTime": 101.8,
+        "HookCount": 220.3,
+        "UndoCount": 0.0,
+        "RetryCount": 6.0
+    },
+    {
+        "CamPosName": "BL3",
+        "PlayTime": 32.3,
+        "HookCount": 88.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.3
+    },
+    {
+        "CamPosName": "BL4",
+        "PlayTime": 190.5,
+        "HookCount": 537.7,
+        "UndoCount": 0.0,
+        "RetryCount": 16.0
+    },
+    {
+        "CamPosName": "NK1",
+        "PlayTime": 8.9,
+        "HookCount": 14.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NK2",
+        "PlayTime": 15.6,
+        "HookCount": 44.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NK3",
+        "PlayTime": 23.0,
+        "HookCount": 37.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "FA1",
+        "PlayTime": 207.7,
+        "HookCount": 15.5,
+        "UndoCount": 0.7,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "FA2",
+        "PlayTime": 23.0,
+        "HookCount": 38.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.3
+    },
+    {
+        "CamPosName": "FA3",
+        "PlayTime": 17.2,
+        "HookCount": 8.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "FA4",
+        "PlayTime": 7.7,
+        "HookCount": 12.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "FA5",
+        "PlayTime": 11.0,
+        "HookCount": 14.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C6",
+        "PlayTime": 329.7,
+        "HookCount": 205.0,
+        "UndoCount": 1.3,
+        "RetryCount": 1.7
+    },
+    {
+        "CamPosName": "C7",
+        "PlayTime": 246.4,
+        "HookCount": 385.2,
+        "UndoCount": 51.5,
+        "RetryCount": 2.2
+    },
+    {
+        "CamPosName": "C-?",
+        "PlayTime": 34.8,
+        "HookCount": 23.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-?1",
+        "PlayTime": 19.8,
+        "HookCount": 35.6,
+        "UndoCount": 0.0,
+        "RetryCount": 0.4
+    },
+    {
+        "CamPosName": "C-?2",
+        "PlayTime": 12.1,
+        "HookCount": 20.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-?3",
+        "PlayTime": 20.3,
+        "HookCount": 39.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-?4",
+        "PlayTime": 26.5,
+        "HookCount": 70.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-?5",
+        "PlayTime": 5.0,
+        "HookCount": 16.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-?6",
+        "PlayTime": 6.6,
+        "HookCount": 14.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-?7",
+        "PlayTime": 9.8,
+        "HookCount": 22.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-?8",
+        "PlayTime": 18.8,
+        "HookCount": 45.0,
+        "UndoCount": 1.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "OS",
+        "PlayTime": 7.2,
+        "HookCount": 10.9,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-??1",
+        "PlayTime": 11.8,
+        "HookCount": 35.7,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "C-??2",
+        "PlayTime": 39.7,
+        "HookCount": 119.3,
+        "UndoCount": 0.0,
+        "RetryCount": 1.0
+    },
+    {
+        "CamPosName": "C-??3",
+        "PlayTime": 167.2,
+        "HookCount": 440.7,
+        "UndoCount": 0.0,
+        "RetryCount": 11.3
+    },
+    {
+        "CamPosName": "C-??4",
+        "PlayTime": 166.8,
+        "HookCount": 331.0,
+        "UndoCount": 0.0,
+        "RetryCount": 4.4
+    },
+    {
+        "CamPosName": "OS1",
+        "PlayTime": 3.5,
+        "HookCount": 14.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "OS2",
+        "PlayTime": 3.3,
+        "HookCount": 13.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "OS3",
+        "PlayTime": 2.8,
+        "HookCount": 9.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "OS4",
+        "PlayTime": 4.4,
+        "HookCount": 7.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ELV1",
+        "PlayTime": 7.7,
+        "HookCount": 12.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ELV2",
+        "PlayTime": 2.4,
+        "HookCount": 8.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ELV3",
+        "PlayTime": 2.2,
+        "HookCount": 6.5,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ELV4",
+        "PlayTime": 3.0,
+        "HookCount": 10.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ME1",
+        "PlayTime": 20.2,
+        "HookCount": 15.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ME2",
+        "PlayTime": 24.0,
+        "HookCount": 67.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ME3",
+        "PlayTime": 17.0,
+        "HookCount": 34.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "SP1",
+        "PlayTime": 34.1,
+        "HookCount": 52.0,
+        "UndoCount": 1.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MA1",
+        "PlayTime": 30.7,
+        "HookCount": 44.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MA2",
+        "PlayTime": 5.4,
+        "HookCount": 11.3,
+        "UndoCount": 0.4,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "MA3",
+        "PlayTime": 12.0,
+        "HookCount": 15.2,
+        "UndoCount": 0.4,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ET1",
+        "PlayTime": 34.9,
+        "HookCount": 49.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ET2",
+        "PlayTime": 1.7,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ET3",
+        "PlayTime": 1.7,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "ET4",
+        "PlayTime": 3.4,
+        "HookCount": 6.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D6",
+        "PlayTime": 351.2,
+        "HookCount": 404.0,
+        "UndoCount": 11.0,
+        "RetryCount": 8.7
+    },
+    {
+        "CamPosName": "D7",
+        "PlayTime": 334.1,
+        "HookCount": 641.5,
+        "UndoCount": 27.0,
+        "RetryCount": 3.5
+    },
+    {
+        "CamPosName": "D-?",
+        "PlayTime": 15.5,
+        "HookCount": 9.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-?1",
+        "PlayTime": 1.7,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-?2",
+        "PlayTime": 1.7,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-?3",
+        "PlayTime": 1.7,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-?4",
+        "PlayTime": 5.9,
+        "HookCount": 8.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-?5",
+        "PlayTime": 2.3,
+        "HookCount": 4.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-??",
+        "PlayTime": 2.4,
+        "HookCount": 2.9,
+        "UndoCount": 0.1,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-??1",
+        "PlayTime": 29.0,
+        "HookCount": 57.2,
+        "UndoCount": 4.8,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "D-??2",
+        "PlayTime": 15.3,
+        "HookCount": 25.3,
+        "UndoCount": 0.7,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "D-??3",
+        "PlayTime": 67.5,
+        "HookCount": 134.0,
+        "UndoCount": 23.0,
+        "RetryCount": 1.5
+    },
+    {
+        "CamPosName": "D-??4",
+        "PlayTime": 1.8,
+        "HookCount": 3.3,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E#",
+        "PlayTime": 13.2,
+        "HookCount": 26.5,
+        "UndoCount": 0.5,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E#1",
+        "PlayTime": 8.8,
+        "HookCount": 15.6,
+        "UndoCount": 0.6,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "E#2",
+        "PlayTime": 19.2,
+        "HookCount": 30.0,
+        "UndoCount": 7.2,
+        "RetryCount": 0.2
+    },
+    {
+        "CamPosName": "E##",
+        "PlayTime": 108.1,
+        "HookCount": 152.0,
+        "UndoCount": 7.0,
+        "RetryCount": 1.0
+    },
+    {
+        "CamPosName": "E###",
+        "PlayTime": 63.6,
+        "HookCount": 149.5,
+        "UndoCount": 0.5,
+        "RetryCount": 1.5
+    },
+    {
+        "CamPosName": "E###1",
+        "PlayTime": 33.2,
+        "HookCount": 57.8,
+        "UndoCount": 10.6,
+        "RetryCount": 0.6
+    },
+    {
+        "CamPosName": "E###2",
+        "PlayTime": 137.2,
+        "HookCount": 137.4,
+        "UndoCount": 13.8,
+        "RetryCount": 4.4
+    },
+    {
+        "CamPosName": "E###3",
+        "PlayTime": 67.8,
+        "HookCount": 130.0,
+        "UndoCount": 15.0,
+        "RetryCount": 1.0
+    },
+    {
+        "CamPosName": "E###4",
+        "PlayTime": 40.2,
+        "HookCount": 82.0,
+        "UndoCount": 4.0,
+        "RetryCount": 1.0
+    },
+    {
+        "CamPosName": "E###5",
+        "PlayTime": 339.2,
+        "HookCount": 659.0,
+        "UndoCount": 41.0,
+        "RetryCount": 5.0
+    },
+    {
+        "CamPosName": "E###6",
+        "PlayTime": 1.4,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E###7",
+        "PlayTime": 0.8,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E###8",
+        "PlayTime": 1.0,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####",
+        "PlayTime": 10.0,
+        "HookCount": 32.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####1",
+        "PlayTime": 4.0,
+        "HookCount": 16.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####2",
+        "PlayTime": 3.7,
+        "HookCount": 6.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####3",
+        "PlayTime": 1.3,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####4",
+        "PlayTime": 1.3,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####5",
+        "PlayTime": 1.3,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####6",
+        "PlayTime": 1.3,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####7",
+        "PlayTime": 1.3,
+        "HookCount": 0.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "E####8",
+        "PlayTime": 1.3,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "F?",
+        "PlayTime": 5.2,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "F??",
+        "PlayTime": 2.2,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "F???",
+        "PlayTime": 2.6,
+        "HookCount": 6.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA",
+        "PlayTime": 5.8,
+        "HookCount": 3.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA1",
+        "PlayTime": 19.1,
+        "HookCount": 14.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA2",
+        "PlayTime": 7.1,
+        "HookCount": 18.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA3",
+        "PlayTime": 9.4,
+        "HookCount": 26.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA4",
+        "PlayTime": 11.7,
+        "HookCount": 25.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA5",
+        "PlayTime": 4.3,
+        "HookCount": 14.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA6",
+        "PlayTime": 4.7,
+        "HookCount": 16.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA7",
+        "PlayTime": 5.9,
+        "HookCount": 10.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA8",
+        "PlayTime": 2.7,
+        "HookCount": 12.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA9",
+        "PlayTime": 7.0,
+        "HookCount": 14.5,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "NA10",
+        "PlayTime": 1.4,
+        "HookCount": 4.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "F3",
+        "PlayTime": 201.3,
+        "HookCount": 205.0,
+        "UndoCount": 0.0,
+        "RetryCount": 9.0
+    },
+    {
+        "CamPosName": "N4",
+        "PlayTime": 15.6,
+        "HookCount": 32.0,
+        "UndoCount": 1.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "N6",
+        "PlayTime": 1.8,
+        "HookCount": 5.8,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "EYE",
+        "PlayTime": 10.3,
+        "HookCount": 14.6,
+        "UndoCount": 0.4,
+        "RetryCount": 0.3
+    },
+    {
+        "CamPosName": "F4",
+        "PlayTime": 566.6,
+        "HookCount": 999.0,
+        "UndoCount": 38.0,
+        "RetryCount": 16.0
+    },
+    {
+        "CamPosName": "EYE1",
+        "PlayTime": 5.8,
+        "HookCount": 16.5,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "F5",
+        "PlayTime": 223.7,
+        "HookCount": 350.0,
+        "UndoCount": 1.0,
+        "RetryCount": 13.0
+    },
+    {
+        "CamPosName": "F6",
+        "PlayTime": 637.1,
+        "HookCount": 1055.0,
+        "UndoCount": 69.0,
+        "RetryCount": 21.0
+    },
+    {
+        "CamPosName": "EYE5",
+        "PlayTime": 1.7,
+        "HookCount": 5.4,
+        "UndoCount": 0.0,
+        "RetryCount": 0.1
+    },
+    {
+        "CamPosName": "F7",
+        "PlayTime": 489.1,
+        "HookCount": 811.5,
+        "UndoCount": 53.0,
+        "RetryCount": 11.5
+    },
+    {
+        "CamPosName": "EYE2",
+        "PlayTime": 1.8,
+        "HookCount": 6.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "EYE3",
+        "PlayTime": 2.8,
+        "HookCount": 10.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "EYE4",
+        "PlayTime": 1.6,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "??????",
+        "PlayTime": 29.1,
+        "HookCount": 112.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "???????",
+        "PlayTime": 3.6,
+        "HookCount": 2.0,
+        "UndoCount": 0.0,
+        "RetryCount": 0.0
+    },
+    {
+        "CamPosName": "????????",
+        "PlayTime": 749.6,
+        "HookCount": 2617.0,
+        "UndoCount": 19.0,
+        "RetryCount": 9.0
+    }
+]

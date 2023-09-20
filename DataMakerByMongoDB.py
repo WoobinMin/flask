@@ -51,6 +51,14 @@ class DataMakerByMongoDB:
         self.client = MongoClient(self.mongodb_URI)
         self.db = self.client[self.clientName]
 
+    def RemoveMany(self):
+        self.db.UserDatas.delete_many({ "DateTime": { "$regex": "2023-08" } })
+
+    def UpdateMany(self):
+        update_query = {"$set" : {"BuildVersion" : "Hynpytol 0.4.0"}}
+        self.db.UserDatas.update_many({}, update_query)
+
+
     def AssignUserDatas(self) :
         userDatas_documents = self.db[self.userDatasDBName].find({})
 
@@ -112,6 +120,51 @@ class DataMakerByMongoDB:
     def GetAssignedUserLists(self) -> []:
         return self.userListDatas
     
+    def MakeAllDatas(self):
+        #Data Json을
+        #CamPos
+        #PlayTime
+        #HookCount
+        #UndoCount
+        #..
+        #등 이런식으로 짜줘야함
+
+        camPosDict = {}
+        camPosDataCount = {}
+        for data in self.userListDatas:
+            for visitedStage in data.visitedStages:
+                if visitedStage.camPosName in camPosDict:
+                    #데이터값 더해주기
+                    camPosDataCount[visitedStage.camPosName] += 1
+                    camPosDict[visitedStage.camPosName].playTime += visitedStage.playTime
+                    camPosDict[visitedStage.camPosName].hookCount += visitedStage.hookCount
+                    camPosDict[visitedStage.camPosName].undoCount += visitedStage.undoCount
+                    camPosDict[visitedStage.camPosName].retryCount += visitedStage.retryCount
+                else:
+                    camPosDataCount[visitedStage.camPosName] = 1
+                    camPosDict[visitedStage.camPosName] = UserStageData()
+                    camPosDict[visitedStage.camPosName].playTime = visitedStage.playTime
+                    camPosDict[visitedStage.camPosName].hookCount = visitedStage.hookCount
+                    camPosDict[visitedStage.camPosName].undoCount = visitedStage.undoCount
+                    camPosDict[visitedStage.camPosName].retryCount = visitedStage.retryCount
+
+        for key in camPosDict:
+            camPosDict[key].playTime = round(camPosDict[key].playTime / camPosDataCount[key], 1)
+            camPosDict[key].hookCount =  round(camPosDict[key].hookCount / camPosDataCount[key], 1)
+            camPosDict[key].undoCount =  round(camPosDict[key].undoCount / camPosDataCount[key], 1)
+            camPosDict[key].retryCount =  round(camPosDict[key].retryCount / camPosDataCount[key], 1)
+
+        userStageDatas_Dic = [{"CamPosName" : key,
+                               "PlayTime" : camPosDict[key].playTime,
+                               "HookCount" : camPosDict[key].hookCount,
+                               "UndoCount" : camPosDict[key].undoCount,
+                               "RetryCount" : camPosDict[key].retryCount} for key in camPosDict]
+        
+        json_data = json.dumps(userStageDatas_Dic, indent=4)
+
+        with open(f"./static/document/UserStageDatas.json", "w") as json_file:
+            json_file.write(json_data)
+    
     def MakeJsonFile(self, date : str):
         #Data Json을
         #CamPos
@@ -162,4 +215,4 @@ class DataMakerByMongoDB:
 
 
 maker = DataMakerByMongoDB("Hynpytol" , "UserDatas" , "UserList")
-maker.RemoveMany()
+maker.UpdateMany()
